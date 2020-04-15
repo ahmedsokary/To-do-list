@@ -1,0 +1,24 @@
+<!-- to include my headers.ejs  as not to repeat same header and footer if making another html just include-->
+<%- include('headers'); -%>
+  <!-- the <%%> is to use js in html and we must use the specefic formate if(){} else{} with all the braces no shortcuts-->
+<div class="box" id="heading">
+    <h1><%=theDay%></h1>
+</div>
+<div class="box">
+  <% for(var i=0;i<newItem.length;i++){  %>
+    <div class="item">
+  <input type="checkbox" >
+    <p> <%=newItem[i]%></p>
+
+  </div>
+    <% } %>
+  <form action="/" class="item"   method="post">
+  <input type="text" name="newInput" placeholder="New item" autocomplete="off">
+    <button type="submit" name="button" value=<%=theDay%>>+</button>
+<!--i gave that button a value of what is going to be send by get and check using it on which list i am working on-->
+  </form>
+
+</div>
+
+<%- include('footers'); -%>
+<!-- to include my footers.ejs -->
